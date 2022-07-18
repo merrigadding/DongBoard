@@ -1,17 +1,25 @@
+import vue from 'vue'
+import vuex from 'vuex'
 
+vue.use(vuex);
 
-const store = {
-    state: {
-        
-    }
-    ,
-    getters: {
-
-    },
-    mutations: {
-        
-    }
-
+const state = {
+    count: 0,
 }
-
-export default store
+const getters = {
+    count(state) {
+        return state.count;
+    }
+}
+const mutations = {
+    increase(state) {
+        state.count++;
+    }
+}
+  
+export default new vuex.Store({
+    state,
+    getters,
+    mutations
+    
+})
