@@ -1,0 +1,75 @@
+.sign-content {
+  width: 100%;
+}
+
+.sign-content-wrap {
+  width: 560px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.sign-content-top {
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.sign-content-center {
+  margin-bottom: 30px;
+}
+
+.sign-content-bottom {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.sign-content-bottom > div {
+  cursor: pointer;
+  border: 2px solid black;
+  width: 100%;
+  line-height: 30px;
+  padding: 12px;
+  margin-bottom: 15px;
+}
+
+.sign-content-bottom > div:hover {
+  border: 2px solid blue;
+}
+
+.agreement-top {
+  margin-top: 30px;
+  border-bottom: 2px solid gainsboro;
+}
+
+.agreement-bottom {
+  text-align: left;
+  padding: 5px;
+}
+
+.agreement-all {
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.agreement-content {
+  border: 1px solid black;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.agreement-content div {
+  margin-bottom: 20px;
+}
+.agreement-content-title {
+  height: 40px;
+  line-height: 40px;
+  cursor: pointer;
+}
+.agreement-content-info {
+  height: 110px;
+  overflow: scroll;
+}
+.agreement-mg {
+  margin-top: 10px;
+  border-bottom: 1px solid gainsboro;
+}

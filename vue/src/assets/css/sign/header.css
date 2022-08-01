@@ -1,0 +1,21 @@
+.sign-header {
+  width: 100%;
+}
+.sign-header-wrap {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+.sign-header-wrap > div {
+  height: 69px;
+  line-height: 69px;
+}
+
+.sign-header-wrap p {
+  padding: 0 12px;
+}
+
+.sign-header-wrap p:hover {
+  font-weight: bold;
+  cursor: pointer;
+}

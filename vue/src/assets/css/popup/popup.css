@@ -1,0 +1,116 @@
+.background-popup {
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.7;
+  background-color: black;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.inner-popup {
+  position: relative;
+  top: 25%;
+  width: 400px;
+  height: 300px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+.cancle-content {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+}
+
+.login-content-input div {
+  margin-bottom: 10px;
+}
+
+.login-content-input input {
+  padding: 5px;
+}
+.login-content-input input:focus {
+  transition: 0.12s;
+  outline: 2px solid blue;
+}
+
+.login-content label {
+  margin-right: 10px;
+}
+
+.login-btn-content {
+  position: absolute;
+  right: -10px;
+  bottom: -41px;
+}
+
+.login-btn-content button {
+  width: 117px;
+  height: 73px;
+  border: 2px solid black;
+  border-radius: 10%;
+}
+
+.login-content-bottom-btn button {
+  background-color: black;
+  color: white;
+}
+
+.login-content-bottom-btn button:hover {
+  transition: 0.25s;
+  background-color: blue;
+}
+
+.login-content-input label:hover {
+  cursor: pointer;
+}
+
+.login-content-input input {
+  width: 100%;
+}
+
+.high-bar-right button:hover {
+  font-weight: bold;
+}
+
+.login-content-banner {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.login-content-checkbox {
+  cursor: pointer;
+}
+.login-content-checkbox label {
+  font-size: 15px;
+}
+
+.login-content-bottom button {
+  width: 100%;
+  height: 30px;
+}
+
+.inner-popup > div {
+  margin: 10px;
+}
+
+.login-content-bottom-flex {
+  margin-top: 10px;
+}
+.login-content-bottom-flex ul {
+  display: flex;
+}
+
+.login-content-bottom-flex li {
+  margin-left: 5px;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.login-content-bottom-flex li:hover {
+  transition: 0.25s;
+  color: blue;
+}
