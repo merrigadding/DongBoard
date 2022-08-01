@@ -4,14 +4,17 @@ import router from './router'
 import store from './store'
 import componentRester from './config/componentRegister'
 
-import './assets/css/hnb/hnb.css';
-import './assets/css/reset.css';
+import './assets/css/hnb/hnb.css'
+import './assets/css/reset.css'
+import './assets/css/popup/popup.css'
+import './assets/css/sign/main.css'
+import './assets/css/sign/header.css'
 Vue.config.productionTip = false
 
-componentRester.init();
+componentRester.init()
 
 new Vue({
   store,
   router,
-  render: h => h(App)
+  render: (h) => h(App),
 }).$mount('#app')

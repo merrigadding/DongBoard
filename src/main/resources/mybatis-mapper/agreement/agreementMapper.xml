@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="com.dongproject.agreement.mapper.AgreementMapper">
+	<resultMap type="com.dongproject.agreement.vo.AgreementVo" id="agreementMap">
+		<result column="agreement_no" property="agreementNo"/>
+		<result column="agreement_title" property="agreementTitle"/>
+		<result column="agreement_content" property="agreementContent"/>
+		<result column="create_date" property="createDate"/>
+	</resultMap>
+	<select id="selectAgreementInfo" resultMap="agreementMap">
+		select * from agreement
+	</select>
+</mapper>
