@@ -155,3 +155,7 @@ button {
 .pa-20 {
   padding: 10px 20px;
 }
+
+body {
+  height: 1000px;
+}

@@ -7,10 +7,10 @@
       <div class="high-bar-center">
         <ul>
           <li>
-            <button>게시글</button>
+            <button @click="boardMove">게시글</button>
           </li>
           <li>
-            <button>방명록</button>
+            <button @click="questBook">방명록</button>
           </li>
         </ul>
       </div>
@@ -26,6 +26,12 @@ export default {
   methods: {
     loginPopup() {
       this.$store.commit('loginPopup')
+    },
+    boardMove() {
+      utils.message('준비중 입니다.')
+    },
+    questBook() {
+      utils.message('준비중 입니다.')
     },
   },
 }
