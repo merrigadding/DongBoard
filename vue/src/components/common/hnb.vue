@@ -2,12 +2,20 @@
   <div class="high-bar">
     <div class="high-bar-wrap">
       <div class="high-bar-left">
-        <button>DongBlog</button>
+        <button
+          @click="
+            $router.push({
+              name: 'home',
+            })
+          "
+        >
+          DongBlog
+        </button>
       </div>
       <div class="high-bar-center">
         <ul>
           <li>
-            <button @click="boardMove">게시글</button>
+            <button @click="boardMove">게시판</button>
           </li>
           <li>
             <button @click="questBook">방명록</button>
@@ -28,7 +36,9 @@ export default {
       this.$store.commit('loginPopup')
     },
     boardMove() {
-      utils.message('준비중 입니다.')
+      this.$router.push({
+        name: 'board',
+      })
     },
     questBook() {
       utils.message('준비중 입니다.')

@@ -4,6 +4,7 @@ import main from '../views/main/main.vue'
 import signPage from '../views/signPage/signPage.vue'
 import mainPage from '../views/signPage/mainPage.vue'
 import agreement from '../views/signPage/agreement.vue'
+import boardMain from '../views/main/board/boardMain.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -11,6 +12,13 @@ const routes = [
     path: '/',
     name: 'home',
     component: main,
+    children: [
+      {
+        path: 'board',
+        name: 'board',
+        component: boardMain,
+      },
+    ],
   },
   {
     path: '/sign',

@@ -1,0 +1,121 @@
+.content {
+  border: 1px solid black;
+  width: 800px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.page > div {
+  margin-bottom: 30px;
+}
+
+.board-title {
+  height: 30px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.board-title > div {
+  line-height: 30px;
+}
+
+.board-title::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  top: 40px;
+  left: 0;
+  border-bottom: 1px solid #cccccc;
+}
+
+.board-content {
+  height: 350px;
+}
+
+.board-bottom {
+  display: flex;
+  justify-content: center;
+}
+
+.paging {
+  display: flex;
+}
+
+.paging-no {
+  padding: 5px;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.paging-no:hover {
+  color: #51bdef;
+}
+
+.board-content-top {
+  display: flex;
+  border: 1px solid black;
+  text-align: center;
+  background-color: #dfdddc;
+  padding: 5px 0;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.row {
+  display: flex;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 11px;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.row > div {
+  overflow: hidden;
+  margin: auto;
+}
+
+.row:hover {
+  background-color: #cccccc;
+}
+
+.search-text {
+  display: none;
+  width: 0px;
+  height: 28.18px;
+  margin-right: 10px;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: none;
+}
+.search-icon,
+.x-icon {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.x-icon {
+  display: none;
+}
+
+@keyframes textShow {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 200px;
+  }
+}
+@keyframes textHive {
+  from {
+    opacity: 1;
+    width: 200px;
+  }
+  to {
+    opacity: 0;
+    width: 0px;
+  }
+}

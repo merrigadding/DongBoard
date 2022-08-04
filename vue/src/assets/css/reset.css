@@ -152,10 +152,35 @@ button {
   border-radius: 5px;
 }
 
+.blue-btn:hover {
+  background-color: black;
+  color: white;
+  transition: 0.5s;
+}
+
 .pa-20 {
   padding: 10px 20px;
 }
 
 body {
   height: 1000px;
+}
+
+.width-10 {
+  width: 10%;
+}
+.width-20 {
+  width: 20%;
+}
+.width-30 {
+  width: 30%;
+}
+.width-40 {
+  width: 40%;
+}
+.width-50 {
+  width: 50%;
+}
+.width-60 {
+  width: 60%;
 }

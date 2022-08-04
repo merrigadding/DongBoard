@@ -41,7 +41,9 @@
       </div>
     </div>
     <hnb></hnb>
-    <div class="">여긴 뭐 넣을까낭</div>
+    <div class="content">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
