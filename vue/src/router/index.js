@@ -5,6 +5,7 @@ import signPage from '../views/signPage/signPage.vue'
 import mainPage from '../views/signPage/mainPage.vue'
 import agreement from '../views/signPage/agreement.vue'
 import boardMain from '../views/main/board/boardMain.vue'
+import boardWrite from '../views/main/board/boardWrite.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -17,6 +18,11 @@ const routes = [
         path: 'board',
         name: 'board',
         component: boardMain,
+      },
+      {
+        path: 'boardWrite',
+        name: 'boardWrite',
+        component: boardWrite,
       },
     ],
   },

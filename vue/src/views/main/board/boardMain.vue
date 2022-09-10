@@ -1,7 +1,13 @@
 <template>
   <div class="page">
     <div class="board-title">
-      <div>게시판</div>
+      <div>
+        <div>
+          <boardTitle :siteId="userInfo.userAddress"></boardTitle
+          ><boardContent></boardContent>
+        </div>
+      </div>
+
       <div>
         <input
           class="search-text"
@@ -19,7 +25,7 @@
           class="x-icon"
           icon="fa-solid fa-xmark"
         />
-        <button class="blue-btn">글쓰기</button>
+        <button class="blue-btn" @click="boardWrite">글쓰기</button>
       </div>
     </div>
     <div class="board-content">
@@ -88,11 +94,25 @@
 </template>
 
 <script>
+// eslint-disable-next-line
+import _ from 'lodash'
+import boardTitle from '../../../components/board/CMP_TEST_001.vue'
+import boardContent from '../../../components/board/CMP_TEST_002.vue'
 export default {
   data() {
-    return {}
+    return {
+      ddd: '아오',
+    }
   },
-
+  components: {
+    boardTitle,
+    boardContent,
+  },
+  computed: {
+    userInfo() {
+      return this.$store.getters.userInfo
+    },
+  },
   methods: {
     iconHide() {
       const sIcon = document.querySelector('.search-icon')
@@ -114,6 +134,14 @@ export default {
       xIcon.style.display = 'none'
       textBox.style.animation = 'textHive 0.5s forwards'
       sIcon.style.display = 'inline-block'
+    },
+    boardWrite() {
+      //   const userInfo = this.$store.getters.userInfo
+      //   console.log(userInfo)
+      //   if (_.isEmpty(userInfo)) {
+      //     alert('로그인 후 이용바람.')
+      //   }
+      this.$router.push({ name: 'boardWrite' })
     },
   },
 }

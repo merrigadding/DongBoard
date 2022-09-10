@@ -1,16 +1,22 @@
 package com.dongproject.user.dvo;
 
+import java.util.Date;
+
+import com.dongproject.common.dvo.BaseDvo;
+
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
-public class UserVo {
+@ToString
+public class UserVo extends BaseDvo{
 
-	public UserVo() {
-		// TODO Auto-generated constructor stub
-	}
-	
 	private String userId;
-	private String userPw;
+	private String userPassword;
+	private String userAddress;
+	private String userPhone;
+	private String userSex;
+	private Date createDate;
 }

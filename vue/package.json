@@ -12,8 +12,10 @@
     "axios": "^0.27.2",
     "core-js": "^3.8.3",
     "vue": "^2.6.14",
+    "vue-cookies": "^1.8.1",
     "vue-router": "^3.5.1",
-    "vuex": "^3.4.0"
+    "vuex": "^3.4.0",
+    "vuex-persistedstate": "^4.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -38,7 +40,8 @@
       "window": false,
       "_": false,
       "http": false,
-      "utils": false
+      "utils": false,
+      "axios": false
     },
     "extends": [
       "plugin:vue/essential",
@@ -47,7 +50,9 @@
     "parserOptions": {
       "parser": "@babel/eslint-parser"
     },
-    "rules": {}
+    "rules": {
+      "no-unused-vars": "off"
+    }
   },
   "browserslist": [
     "> 1%",

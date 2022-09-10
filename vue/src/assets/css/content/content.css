@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Comforter&family=Nanum+Gothic:wght@700&family=Nanum+Pen+Script&display=swap');
+
 .content {
   border: 1px solid black;
-  width: 800px;
+  width: 80vw;
   margin: 20px auto;
   padding: 10px;
 }
@@ -32,6 +34,9 @@
 .board-content {
   height: 350px;
 }
+.board-content-center {
+  font-family: 'Dongle', sans-serif;
+}
 
 .board-bottom {
   display: flex;
@@ -60,6 +65,7 @@
   padding: 5px 0;
   font-size: 13px;
   font-weight: bold;
+  font-family: 'Dongle', sans-serif;
 }
 
 .row {
@@ -86,10 +92,7 @@
   width: 0px;
   height: 28.18px;
   margin-right: 10px;
-  border-left: 1px solid black;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  border-right: none;
+  border: 1px solid black;
 }
 .search-icon,
 .x-icon {
@@ -103,9 +106,11 @@
 
 @keyframes textShow {
   from {
+    opacity: 0;
     width: 0px;
   }
   to {
+    opacity: 1;
     width: 200px;
   }
 }

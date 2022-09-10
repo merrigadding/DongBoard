@@ -13,21 +13,34 @@
               </div>
               <div class="login-content-input">
                 <div>
-                  <input type="text" placeholder="ID (아이디 또는 이메일)" />
+                  <input
+                    ref="userId"
+                    v-model="userId"
+                    type="text"
+                    placeholder="ID (아이디 또는 이메일)"
+                  />
                 </div>
                 <div>
-                  <input type="password" placeholder="비밀번호" />
+                  <input
+                    v-model="userPw"
+                    type="password"
+                    placeholder="비밀번호"
+                  />
                 </div>
               </div>
               <div class="login-content-checkbox">
-                <input type="checkbox" id="loginCheck" />
-                <label for="loginCheck">로그인상태 유지</label>
+                <input
+                  type="checkbox"
+                  id="loginStatus"
+                  v-model="checkboxCookie"
+                />
+                <label for="loginStatus">아이디 유지</label>
               </div>
             </div>
           </div>
           <div class="login-content-bottom">
             <div class="login-content-bottom-btn">
-              <button>로그인</button>
+              <button @click="login">로그인</button>
             </div>
             <div class="login-content-bottom-flex">
               <ul>
@@ -53,8 +66,13 @@ import axios from 'axios'
 export default {
   data() {
     return {
-      userId: '',
+      userId: this.$cookies.get('userIdCookie')
+        ? this.$cookies.get('userIdCookie')
+        : '',
       userPw: '',
+      checkboxCookie: this.$cookies.get('checkboxCookie')
+        ? this.$cookies.get('checkboxCookie')
+        : false,
     }
   },
   computed: {
@@ -62,29 +80,51 @@ export default {
       return this.$store.getters.loginPopup
     },
   },
+  mounted() {},
   methods: {
     sign() {
       this.$router.push({
         name: 'main',
       })
     },
+    reset() {
+      this.userId = ''
+      this.userPw = ''
+    },
     login() {
       const params = {
         userId: this.userId,
         userPw: this.userPw,
       }
-      console.log(params)
+
       axios
         .request({
           url: '/api/v1/test/login',
           params: params,
         })
         .then((res) => {
-          console.log(res.data)
+          if (res.data.data == null) {
+            alert('로그인 실패 다시 로그인 해주세요.')
+            this.$refs.userId.focus()
+          } else {
+            this.maintainCookie()
+            const userInfo = res.data.data
+            this.$store.commit('userInfo', userInfo)
+            this.$store.commit('loginPopupCancle')
+          }
         })
     },
+    maintainCookie() {
+      if (!this.checkboxCookie) {
+        this.$cookies.keys().forEach((cookie) => this.$cookies.remove(cookie))
+        this.userId = ''
+      } else {
+        this.$cookies.set('checkboxCookie', this.checkboxCookie)
+        this.$cookies.set('userIdCookie', this.userId)
+      }
+      this.userPw = ''
+    },
     Cancle() {
-      this.userId = ''
       this.userPw = ''
       this.$store.commit('loginPopupCancle')
     },

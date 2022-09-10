@@ -4,7 +4,9 @@ import router from './router'
 import store from './store'
 import componentRester from './config/componentRegister'
 import utils from './config/utils.js'
+import vueCookies from 'vue-cookies'
 
+import http from './config/Http_Client.js'
 import './assets/css/hnb/hnb.css'
 import './assets/css/reset.css'
 import './assets/css/popup/popup.css'
@@ -30,9 +32,13 @@ library.add(faMagnifyingGlass, faXmark)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
+Vue.use(vueCookies)
+Vue.$cookies.config('1d') // expire 1일 (global 설정)
 
 componentRester.init()
 window.utils = utils
+window.http = http
+
 utils.install('message', (msg) => {
   const res = document.querySelector('.message')
   if (!res) {
