@@ -7,6 +7,7 @@
 		<result column="user_address" property="userAddress"></result>
 		<result column="user_phone" property="userPhone"></result>
 		<result column="user_sex" property="userSex"></result>
+		<result column="site_id" property="siteId"></result>
 		<result column="create_date" property="createDate"></result>
 	</resultMap>
 	<select id="userInfo" parameterType="com.dongproject.user.dvo.UserVo" resultMap="userInfo">
@@ -16,6 +17,7 @@
 		       user_address,
 		       to_char(LPAD(user_phone,11,0)) as user_phone,
 		       user_sex,
+		       site_id,
 		       create_date
 	  	from user_info
 	  	where user_id = #{userId} and user_password = #{userPassword}

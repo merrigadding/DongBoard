@@ -7,6 +7,7 @@ const state = {
   count: 0,
   loginPopup: false,
   userInfo: null,
+  status: 0,
 }
 const getters = {
   count(state) {
@@ -17,6 +18,9 @@ const getters = {
   },
   userInfo(state) {
     return state.userInfo
+  },
+  status(state) {
+    return state.status
   },
 }
 const mutations = {
@@ -34,6 +38,12 @@ const mutations = {
   },
   logout(state) {
     state.userInfo = null
+  },
+  plusStatus(state) {
+    state.status++
+  },
+  minusStatus(state) {
+    state.status--
   },
 }
 

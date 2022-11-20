@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dongproject.board.mapper.BoardMapper">
+	<resultMap type="com.dongproject.board.vo.CatogoryVo" id="categoryMap">
+		<result column="category_no" property="categoryNo"></result>
+		<result column="category_name" property="categoryName"></result>
+	</resultMap>
+	<resultMap type="com.dongproject.board.vo.CatogoryDetailVo" id="CatogoryDetailVo">
+		<result column="category_detail_no" property="categoryDetailNo"></result>
+		<result column="category_detail_name" property="categoryDetailName"></result>
+		<result column="category_no" property="categoryNo"></result>
+	</resultMap>
+
+ 	<select id="selectCategoryOption" resultMap="categoryMap">
+ 		select * from category
+ 	</select>
+ 	<select id="selectCategoryDetailOption" parameterType="com.dongproject.board.vo.CatogoryDetailVo" resultMap="CatogoryDetailVo">
+ 		select * from category_detail
+ 		where 1=1
+ 		<if test="categoryDetailNo != '0' and categoryDetailNo != '' and categoryDetailNo != null">
+ 			and category_no = #{categoryDetailNo}
+ 		</if>
+ 	</select>
+ 	
+ 	<insert id="insertBoard" parameterType="com.dongproject.board.vo.Board">
+ 		insert into free_board values(
+ 			free_board_seq.nextval
+ 		   ,#{boardTitle}
+ 		   ,#{textContent}
+ 		   ,#{categoryDetailNo}
+ 		)
+ 	</insert>
+</mapper>

@@ -7,10 +7,6 @@
   padding: 10px;
 }
 
-.page > div {
-  margin-bottom: 30px;
-}
-
 .board-title {
   height: 30px;
   position: relative;
@@ -102,6 +98,42 @@
 
 .x-icon {
   display: none;
+}
+
+.write-div {
+  display: flex;
+  line-height: 30px;
+}
+.write-div div {
+  margin: 5px;
+  min-width: 100px;
+}
+.write-div div:nth-child(1) {
+  width: 20%;
+  min-width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: gainsboro;
+}
+
+.content-div-label {
+  height: 120px;
+  display: flex;
+  align-items: center;
+}
+.inline-div {
+  display: inline-block;
+}
+.board-write-title-input {
+  width: 85%;
+}
+.wirte-div-bottom {
+  display: flex;
+  justify-content: end;
+}
+.wirte-div-bottom div {
+  margin: 0 5px 0;
 }
 
 @keyframes textShow {

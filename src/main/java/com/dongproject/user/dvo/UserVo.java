@@ -18,5 +18,6 @@ public class UserVo extends BaseDvo{
 	private String userAddress;
 	private String userPhone;
 	private String userSex;
+	private String siteId;
 	private Date createDate;
 }

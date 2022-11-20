@@ -22,7 +22,6 @@ public class AgreementController {
 	
 	@RequestMapping("/info")
 	public ResponseEntity<List<AgreementVo>> selectAgreementInfo() {
-		LOGGER.info("흠");
 		List<AgreementVo> list = service.selectAgreementInfo();
 		return new ResponseEntity<List<AgreementVo>>(list,HttpStatus.OK);
 	}

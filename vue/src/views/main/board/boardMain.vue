@@ -3,8 +3,8 @@
     <div class="board-title">
       <div>
         <div>
-          <boardTitle :siteId="userInfo.userAddress"></boardTitle
-          ><boardContent></boardContent>
+          <!-- <boardTitle></boardTitle -->
+          <!-- <boardContent></boardContent> -->
         </div>
       </div>
 
@@ -95,8 +95,7 @@
 
 <script>
 // eslint-disable-next-line
-import _ from 'lodash'
-import boardTitle from '../../../components/board/CMP_TEST_001.vue'
+// import boardTitle from '../../../components/board/CMP_TEST_001.vue'
 import boardContent from '../../../components/board/CMP_TEST_002.vue'
 export default {
   data() {
@@ -105,7 +104,8 @@ export default {
     }
   },
   components: {
-    boardTitle,
+    // boardTitle,
+    // eslint-disable-next-line
     boardContent,
   },
   computed: {
@@ -136,12 +136,13 @@ export default {
       sIcon.style.display = 'inline-block'
     },
     boardWrite() {
-      //   const userInfo = this.$store.getters.userInfo
-      //   console.log(userInfo)
-      //   if (_.isEmpty(userInfo)) {
-      //     alert('로그인 후 이용바람.')
-      //   }
-      this.$router.push({ name: 'boardWrite' })
+      const userInfo = this.$store.getters.userInfo
+      console.log(userInfo)
+      if (_.isEmpty(userInfo)) {
+        alert('로그인 후 이용바람.')
+      } else {
+        this.$router.push({ name: 'boardWrite' })
+      }
     },
   },
 }

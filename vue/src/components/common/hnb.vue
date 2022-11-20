@@ -59,9 +59,11 @@ export default {
       this.$store.commit('loginPopup')
     },
     boardMove() {
-      this.$router.push({
-        name: 'board',
-      })
+      this.$router
+        .push({
+          name: 'board',
+        })
+        .catch(() => {})
     },
     questBook() {
       utils.message('준비중 입니다.')

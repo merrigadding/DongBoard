@@ -5,6 +5,7 @@ import store from './store'
 import componentRester from './config/componentRegister'
 import utils from './config/utils.js'
 import vueCookies from 'vue-cookies'
+import _ from 'lodash'
 
 import http from './config/Http_Client.js'
 import './assets/css/hnb/hnb.css'
@@ -38,6 +39,7 @@ Vue.$cookies.config('1d') // expire 1일 (global 설정)
 componentRester.init()
 window.utils = utils
 window.http = http
+window._ = _
 
 utils.install('message', (msg) => {
   const res = document.querySelector('.message')

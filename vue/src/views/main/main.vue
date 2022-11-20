@@ -57,13 +57,17 @@
     <div class="content">
       <router-view></router-view>
     </div>
+    <status></status>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
-
+import status from '../../components/common/CMP_STATUS.vue'
 export default {
+  components: {
+    status,
+  },
   data() {
     return {
       userId: this.$cookies.get('userIdCookie')
